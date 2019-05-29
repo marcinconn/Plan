@@ -1,0 +1,29 @@
+﻿<Window x:Class="plan.AddToTreeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:plan"
+        mc:Ignorable="d"
+        Title="Dodawanie" Height="150" Width="350" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Name="addProperty" Grid.Row="0" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" Content="Podaj wartość do dodania"></Label>
+        <TextBox Name="toAdd" Grid.Column="1" Grid.Row="1"></TextBox>
+
+        <WrapPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button IsDefault="True" Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,0,10,0" Content="Dodaj"></Button>
+            <Button IsCancel="True" MinWidth="60" Content="Anuluj" Margin="10,0,0,0"></Button>
+        </WrapPanel>
+    </Grid>
+</Window>

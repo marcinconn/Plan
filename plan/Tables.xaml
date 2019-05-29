@@ -1,0 +1,26 @@
+﻿<Window x:Class="plan.Tables"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:plan"
+        mc:Ignorable="d"
+        Title="Zawartość tabeli" Height="400" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+            <Label Name="tabTitle" HorizontalAlignment="Center"></Label>
+            <DataGrid Name="tabela" IsReadOnly="True"  AutoGenerateColumns="False" CanUserResizeColumns="True" CanUserReorderColumns="False" SelectionUnit="Cell" SelectionMode="Single" CanUserSortColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Path='Identyfikator'}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Wartość" Binding="{Binding Path='Nazwa'}" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

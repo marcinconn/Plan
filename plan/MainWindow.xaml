@@ -1,0 +1,70 @@
+﻿<Window x:Class="plan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:plan"
+        mc:Ignorable="d"
+        Title="Plan zajęć" Height="450" Width="1000" WindowStartupLocation="CenterScreen">
+       <Grid Margin="0,-1,-0.4,1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" IsMainMenu="True">
+            <MenuItem Header="Nauczyciel">
+                <MenuItem Header="Dodaj" Click="What" Name="add_n"></MenuItem>
+                <MenuItem Header="Edytuj" Click="What" Name="edit_n"></MenuItem>
+                <MenuItem Header="Usuń" Click="What" Name="del_n"></MenuItem>
+                <MenuItem Header="Pokaż" Click="What" Name="show_n"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Sala">
+                <MenuItem Header="Dodaj" Click="What" Name="add_s"></MenuItem>
+                <MenuItem Header="Edytuj" Click="What" Name="edit_s"></MenuItem>
+                <MenuItem Header="Usuń" Click="What" Name="del_s" Margin="0,0,0.4,0"></MenuItem>
+                <MenuItem Header="Pokaż" Click="What" Name="show_s"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Klasa">
+                <MenuItem Header="Dodaj" Click="What" Name="add_k"></MenuItem>
+                <MenuItem Header="Edytuj" Click="What" Name="edit_k"></MenuItem>
+                <MenuItem Header="Usuń" Click="What" Name="del_k"></MenuItem>
+                <MenuItem Header="Pokaż" Click="What" Name="show_k"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Przedmiot">
+                <MenuItem Header="Dodaj" Click="What" Name="add_p"></MenuItem>
+                <MenuItem Header="Edytuj" Click="What" Name="edit_p"></MenuItem>
+                <MenuItem Header="Usuń" Click="What" Name="del_p"></MenuItem>
+                <MenuItem Header="Pokaż" Click="What" Name="show_p"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Zajęcia">
+                <MenuItem Header="Dodaj" Click="What" Name="add_z"></MenuItem>
+                <MenuItem Header="Usuń wybrane" Click="What" Name="del_spec_z"></MenuItem>
+                <MenuItem Header="Usuń wszystko" Click="Delete_All" Name="del_all_z"></MenuItem>
+                <MenuItem Header="Pokaż" Click="What" Name="show_z"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TreeView Name="tree" Grid.Column="0" Grid.Row="1"  Margin="25,25,35,0" x:FieldModifier="public">
+            <TreeViewItem Name="klasy" Header="Klasy" Margin="5" x:FieldModifier="public"></TreeViewItem>
+            <TreeViewItem Name="sale" Header="Sale" Margin="5" x:FieldModifier="public"></TreeViewItem>
+            <TreeViewItem Name="nauczyciel" Header="Nauczyciele" Margin="5" x:FieldModifier="public" ></TreeViewItem>
+        </TreeView>
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+            <Label Name="planTitle" HorizontalAlignment="Center"></Label>
+            <DataGrid Name="plan" IsReadOnly="True"  AutoGenerateColumns="False" CanUserResizeColumns="True" CanUserReorderColumns="False" SelectionUnit="Cell" SelectionMode="Single" CanUserSortColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Lp" Binding="{Binding Path='id_ter'}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Godzina" Binding="{Binding Path='ter_nazwa'}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Poniedziałek" Binding="{Binding Path='1'}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Wtorek" Binding="{Binding Path='2'}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Środa" Binding="{Binding Path='3'}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Czwartek" Binding="{Binding Path='4'}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Piątek" Binding="{Binding Path='5'}" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
